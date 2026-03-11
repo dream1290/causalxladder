@@ -1,0 +1,55 @@
+{
+    "version": "1.0.0",
+    "description": "Fixed evaluation seeds and intervention schedules for the Causal Learning Benchmark. Committed to repository — never regenerated at runtime. Results reported against v1.0.0 seeds are comparable across all implementations and years.",
+
+    "episode_seeds": [
+        7, 24, 41, 58, 75, 92, 109, 126, 143, 160,
+        177, 194, 211, 228, 245, 262, 279, 296, 313, 330,
+        347, 364, 381, 398, 415, 432, 449, 466, 483, 500,
+        517, 534, 551, 568, 585, 602, 619, 636, 653, 670,
+        687, 704, 721, 738, 755, 772, 789, 806, 823, 840,
+        857, 874, 891, 908, 925, 942, 959, 976, 993, 1010,
+        1027, 1044, 1061, 1078, 1095, 1112, 1129, 1146, 1163, 1180,
+        1197, 1214, 1231, 1248, 1265, 1282, 1299, 1316, 1333, 1350,
+        1367, 1384, 1401, 1418, 1435, 1452, 1469, 1486, 1503, 1520,
+        1537, 1554, 1571, 1588, 1605, 1622, 1639, 1656, 1673, 1690
+    ],
+
+    "intervention_steps": [10, 25, 50],
+
+    "episode_allocation": {
+        "test_a": {
+            "start": 0,
+            "end": 40,
+            "count": 40,
+            "description": "Episodes 0-39: Test A (behavioral recovery)"
+        },
+        "test_b": {
+            "start": 40,
+            "end": 70,
+            "count": 30,
+            "description": "Episodes 40-69: Test B (representation update)"
+        },
+        "test_c": {
+            "start": 70,
+            "end": 100,
+            "count": 30,
+            "description": "Episodes 70-99: Test C (novel interventions)"
+        }
+    },
+
+    "novel_intervention_schedule": {
+        "C1_simultaneous": {
+            "description": "Set multiple hidden variables at once (never occurs naturally)",
+            "episode_indices": [70, 71, 72, 73, 74, 75, 76, 77, 78, 79]
+        },
+        "C2_noop": {
+            "description": "Set variable to its current value (no-op intervention)",
+            "episode_indices": [80, 81, 82, 83, 84, 85, 86, 87, 88, 89]
+        },
+        "C3_ood": {
+            "description": "Out-of-distribution intervention values",
+            "episode_indices": [90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
+        }
+    }
+}

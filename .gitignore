@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+venv/
+.env
+
+# Model weights
+*.pt
+*.pth
+
+# Numpy logs
+*.npy
+
+# Generated figures
+figures/
+
+# Jupyter
+*.ipynb
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# pytest
+.pytest_cache/
+
+# Archive (local only)
+archive/
