@@ -4,6 +4,8 @@
 
 This repository contains the benchmark, evolutionary experiments, and neural model from our investigation of causal capacity as an adaptive trait. The core claim: when environmental volatility is high enough and the metabolic cost of tracking hidden variables is low enough, populations evolve causal reasoning as a stable equilibrium — not as an all-or-nothing switch, but as a continuous parameter that settles proportional to selection pressure.
 
+Research paper : https://zenodo.org/records/19118615?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6Ijc4MzEwMjYwLWE4MDMtNDRmYS1hNjUyLTUyMWU4YmQwZTI3MyIsImRhdGEiOnt9LCJyYW5kb20iOiJlZjE5MDNiZjQxNTk4YjcwMGI5NjFjZmNjYzYwZWU1YiJ9.L58LTdhRj1tqy0dORFaSMaDMW3XXVVSRmAmOxjk8syOAHJOToiItb0oFkpQ2Yx8YwqP5qo3X5gN1X-p3S4u8yQ
+
 ## What's Here
 
 ### [`benchmark/`](benchmark/) — Causal Learning Benchmark (CLW)
