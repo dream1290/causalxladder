@@ -1,0 +1,156 @@
+(venv) karl@karl:~/Projects/newai/training$ python causal_model_v3.py
+
+Causal Belief Model v3 — Separated World Model / Policy
+Phase A: 25k | Phase B: 15k (z_w persists) | Phase C: 12k (both)
+
+Total parameters: 114,436
+  World model (world_gru):     51,456
+  Policy (policy_gru + heads): 62,980
+
+PHASE A — Episodic training (z_w and z_p reset each episode)
+  Curriculum: 3(0-5k) → 4(5k-8k) → 5(8k-12k) → 6(12k-17k) → 7(17k-21k) → 8(21k-25k)
+  shaped_correct locked at 0.5
+  Tracking: 0.1  |  m_ceiling: 0.005  |  Entropy: -0.005
+  A ep    500 | reward    105.5 | ||Δz_w|| 0.7907 | streak=3 | time 143s
+  A ep   1000 | reward    102.7 | ||Δz_w|| 0.8936 | streak=3 | time 298s
+  A ep   1500 | reward    105.1 | ||Δz_w|| 0.8732 | streak=3 | time 447s
+  A ep   2000 | reward    106.0 | ||Δz_w|| 0.8042 | streak=3 | time 600s
+  A ep   2500 | reward     99.7 | ||Δz_w|| 0.7886 | streak=3 | time 749s
+  A ep   3000 | reward     86.1 | ||Δz_w|| 0.8179 | streak=3 | time 898s
+  A ep   3500 | reward     75.5 | ||Δz_w|| 0.8269 | streak=3 | time 1052s
+  A ep   4000 | reward     75.5 | ||Δz_w|| 0.8217 | streak=3 | time 1205s
+  A ep   4500 | reward     72.1 | ||Δz_w|| 0.8007 | streak=3 | time 1352s
+  A ep   5000 | reward     75.7 | ||Δz_w|| 0.7937 | streak=3 | time 1498s
+  A ep   5500 | reward     27.6 | ||Δz_w|| 0.7896 | streak=4 | time 1658s
+  A ep   6000 | reward     26.0 | ||Δz_w|| 0.7931 | streak=4 | time 1812s
+  A ep   6500 | reward     26.5 | ||Δz_w|| 0.7918 | streak=4 | time 1964s
+  A ep   7000 | reward     27.9 | ||Δz_w|| 0.8006 | streak=4 | time 2116s
+  A ep   7500 | reward     28.1 | ||Δz_w|| 0.7947 | streak=4 | time 2270s
+  A ep   8000 | reward     24.9 | ||Δz_w|| 0.7656 | streak=4 | time 2423s
+  A ep   8500 | reward     13.1 | ||Δz_w|| 0.7385 | streak=5 | time 2577s
+  A ep   9000 | reward     12.6 | ||Δz_w|| 0.7042 | streak=5 | time 2725s
+  A ep   9500 | reward     12.7 | ||Δz_w|| 0.6880 | streak=5 | time 2879s
+  A ep  10000 | reward     13.2 | ||Δz_w|| 0.6788 | streak=5 | time 3025s
+  A ep  10500 | reward     13.8 | ||Δz_w|| 0.6691 | streak=5 | time 3171s
+  A ep  11000 | reward     11.7 | ||Δz_w|| 0.6622 | streak=5 | time 3316s
+  A ep  11500 | reward     12.6 | ||Δz_w|| 0.6505 | streak=5 | time 3463s
+  A ep  12000 | reward     14.9 | ||Δz_w|| 0.6461 | streak=5 | time 3616s
+  A ep  12500 | reward      7.3 | ||Δz_w|| 0.6421 | streak=6 | time 3767s
+  A ep  13000 | reward      8.8 | ||Δz_w|| 0.6325 | streak=6 | time 3914s
+  A ep  13500 | reward      8.0 | ||Δz_w|| 0.6367 | streak=6 | time 4072s
+  A ep  14000 | reward      8.1 | ||Δz_w|| 0.6320 | streak=6 | time 4235s
+  A ep  14500 | reward      9.0 | ||Δz_w|| 0.6273 | streak=6 | time 4398s
+  A ep  15000 | reward      9.2 | ||Δz_w|| 0.6211 | streak=6 | time 4554s
+  A ep  15500 | reward      7.7 | ||Δz_w|| 0.6269 | streak=6 | time 4706s
+  A ep  16000 | reward      8.3 | ||Δz_w|| 0.6294 | streak=6 | time 4858s
+  A ep  16500 | reward      8.5 | ||Δz_w|| 0.6246 | streak=6 | time 5007s
+  A ep  17000 | reward      7.3 | ||Δz_w|| 0.6210 | streak=6 | time 5158s
+  A ep  17500 | reward      5.9 | ||Δz_w|| 0.6190 | streak=7 | time 5312s
+  A ep  18000 | reward      5.8 | ||Δz_w|| 0.6125 | streak=7 | time 5457s
+  A ep  18500 | reward      6.1 | ||Δz_w|| 0.6140 | streak=7 | time 5579s
+  A ep  19000 | reward      6.3 | ||Δz_w|| 0.6090 | streak=7 | time 5708s
+  A ep  19500 | reward      7.2 | ||Δz_w|| 0.6063 | streak=7 | time 5855s
+  A ep  20000 | reward      7.0 | ||Δz_w|| 0.6069 | streak=7 | time 5994s
+  A ep  20500 | reward      6.6 | ||Δz_w|| 0.6041 | streak=7 | time 6126s
+  A ep  21000 | reward      6.8 | ||Δz_w|| 0.6030 | streak=7 | time 6260s
+  A ep  21500 | reward      6.9 | ||Δz_w|| 0.6009 | streak=8 | time 6397s
+  A ep  22000 | reward      5.7 | ||Δz_w|| 0.5976 | streak=8 | time 6570s
+  A ep  22500 | reward      5.9 | ||Δz_w|| 0.5919 | streak=8 | time 6719s
+  A ep  23000 | reward      5.7 | ||Δz_w|| 0.6002 | streak=8 | time 6858s
+  A ep  23500 | reward      5.5 | ||Δz_w|| 0.5948 | streak=8 | time 6998s
+  A ep  24000 | reward      5.4 | ||Δz_w|| 0.5898 | streak=8 | time 7149s
+  A ep  24500 | reward      5.9 | ||Δz_w|| 0.5931 | streak=8 | time 7305s
+  A ep  25000 | reward      5.5 | ||Δz_w|| 0.5899 | streak=8 | time 7457s
+
+Phase A complete. Final avg reward: 5.7
+Saved → v3_phase_a_checkpoint.pt
+
+PHASE B — Persistent z_w, episodic z_p (the separation test)
+  B0 (0-3k):    warmup, only world_gru trains
+  B1 (3k-8k):  world + policy GRUs, heads frozen
+  B2 (8k+):  everything unfrozen
+  sc_floor=0.5 throughout
+  Tracking: 0.1  |  Entropy: -0.005
+  B0 ep    500 | reward      5.5 | ||Δz_w|| 0.5534 ⚡| time 53s
+  B0 ep   1000 | reward      6.3 | ||Δz_w|| 0.5414 ⚡| time 108s
+  B0 ep   1500 | reward      6.4 | ||Δz_w|| 0.5403 ⚡| time 163s
+  B0 ep   2000 | reward      6.0 | ||Δz_w|| 0.5411 ⚡| time 209s
+  B0 ep   2500 | reward      5.7 | ||Δz_w|| 0.5398 ⚡| time 259s
+  B0 ep   3000 | reward      4.7 | ||Δz_w|| 0.5397 ⚡| time 307s
+
+  ── B1 start: policy_gru unfrozen (lr=3e-4) ──
+  B1 ep   3500 | reward      6.3 | ||Δz_w|| 0.5393 ⚡| time 448s
+  B1 ep   4000 | reward      6.1 | ||Δz_w|| 0.5399 ⚡| time 585s
+  B1 ep   4500 | reward      5.4 | ||Δz_w|| 0.5426 ⚡| time 717s
+  B1 ep   5000 | reward      5.1 | ||Δz_w|| 0.5421 ⚡| time 857s
+  B1 ep   5500 | reward      6.1 | ||Δz_w|| 0.5419 ⚡| time 995s
+  B1 ep   6000 | reward      5.8 | ||Δz_w|| 0.5400 ⚡| time 1135s
+  B1 ep   6500 | reward      5.9 | ||Δz_w|| 0.5405 ⚡| time 1267s
+  B1 ep   7000 | reward      5.4 | ||Δz_w|| 0.5407 ⚡| time 1397s
+  B1 ep   7500 | reward      6.5 | ||Δz_w|| 0.5395 ⚡| time 3754s
+  B1 ep   8000 | reward      5.8 | ||Δz_w|| 0.5397 ⚡| time 3920s
+
+  ── B2 start: heads unfrozen (lr=3e-5) ──
+  B2 ep   8500 | reward      5.8 | ||Δz_w|| 0.5368 ⚡| time 4094s
+  B2 ep   9000 | reward      5.9 | ||Δz_w|| 0.5371 ⚡| time 4266s
+  B2 ep   9500 | reward      5.9 | ||Δz_w|| 0.5365 ⚡| time 4439s
+  B2 ep  10000 | reward      6.0 | ||Δz_w|| 0.5368 ⚡| time 4612s
+  B2 ep  10500 | reward      5.6 | ||Δz_w|| 0.5362 ⚡| time 4784s
+  B2 ep  11000 | reward      6.0 | ||Δz_w|| 0.5359 ⚡| time 4945s
+  B2 ep  11500 | reward      4.7 | ||Δz_w|| 0.5361 ⚡| time 5106s
+  B2 ep  12000 | reward      4.4 | ||Δz_w|| 0.5368 ⚡| time 5285s
+  B2 ep  12500 | reward      5.2 | ||Δz_w|| 0.5357 ⚡| time 5453s
+  B2 ep  13000 | reward      4.9 | ||Δz_w|| 0.5362 ⚡| time 5576s
+  B2 ep  13500 | reward      6.0 | ||Δz_w|| 0.5362 ⚡| time 5695s
+  B2 ep  14000 | reward      6.6 | ||Δz_w|| 0.5360 ⚡| time 5819s
+  B2 ep  14500 | reward      6.3 | ||Δz_w|| 0.5368 ⚡| time 5944s
+  B2 ep  15000 | reward      6.7 | ||Δz_w|| 0.5363 ⚡| time 6070s
+
+Phase B complete. Final avg reward: 6.5
+Final avg ||Δz_w||: 0.5366
+Saved → v3_phase_b_checkpoint.pt
+
+PHASE C — Full persistence (z_w and z_p persist)
+  C0 (0-4k):    warmup, heads frozen
+  C1 (4k+):  full training
+  sc_floor=0.5 throughout
+  C0 ep    500 | reward      4.9 | ||Δz_w|| 0.5392 ⚡| time 111s
+  C0 ep   1000 | reward      6.6 | ||Δz_w|| 0.5360 ⚡| time 229s
+  C0 ep   1500 | reward      5.7 | ||Δz_w|| 0.5365 ⚡| time 343s
+  C0 ep   2000 | reward      6.1 | ||Δz_w|| 0.5359 ⚡| time 462s
+  C0 ep   2500 | reward      5.1 | ||Δz_w|| 0.5364 ⚡| time 570s
+  C0 ep   3000 | reward      6.4 | ||Δz_w|| 0.5355 ⚡| time 689s
+  C0 ep   3500 | reward      5.9 | ||Δz_w|| 0.5357 ⚡| time 804s
+  C0 ep   4000 | reward      6.3 | ||Δz_w|| 0.5351 ⚡| time 922s
+
+  ── C1 start: heads unfrozen ──
+  C1 ep   4500 | reward      5.4 | ||Δz_w|| 0.5354 ⚡| time 1042s
+  C1 ep   5000 | reward      7.9 | ||Δz_w|| 0.5349 ⚡| time 1169s
+  C1 ep   5500 | reward      6.0 | ||Δz_w|| 0.5357 ⚡| time 1305s
+  C1 ep   6000 | reward      5.9 | ||Δz_w|| 0.5346 ⚡| time 1439s
+  C1 ep   6500 | reward      6.3 | ||Δz_w|| 0.5350 ⚡| time 1575s
+  C1 ep   7000 | reward      5.8 | ||Δz_w|| 0.5348 ⚡| time 1704s
+  C1 ep   7500 | reward      6.6 | ||Δz_w|| 0.5358 ⚡| time 1834s
+  C1 ep   8000 | reward      6.1 | ||Δz_w|| 0.5347 ⚡| time 1967s
+  C1 ep   8500 | reward      5.2 | ||Δz_w|| 0.5355 ⚡| time 2094s
+  C1 ep   9000 | reward      5.9 | ||Δz_w|| 0.5354 ⚡| time 2236s
+  C1 ep   9500 | reward      6.5 | ||Δz_w|| 0.5346 ⚡| time 2374s
+  C1 ep  10000 | reward      3.8 | ||Δz_w|| 0.5358 ⚡| time 2507s
+  C1 ep  10500 | reward      4.8 | ||Δz_w|| 0.5349 ⚡| time 2646s
+  C1 ep  11000 | reward      5.0 | ||Δz_w|| 0.5351 ⚡| time 2787s
+  C1 ep  11500 | reward      6.4 | ||Δz_w|| 0.5353 ⚡| time 2908s
+C1 ep  12000 | reward      5.3 | ||Δz_w|| 0.5351 ⚡| time 3033s
+
+Phase C complete. Final avg reward: 5.9
+Final avg ||Δz_w||: 0.5352
+
+  PCA fit: PC1=73.5%, PC2=7.6%
+  Correlation(PC1, label): 0.128 (sign=+1)
+  Scale: 0.160
+Saved → causal_belief_v3_final.pt
+Saved → causal_model_v3_diagnostics.png
+
+Final avg reward  : 5.4
+Final avg ||Δz_w||: 0.5351
+
+→ READY FOR INTERVENTION TEST: python intervention_test_v3.py

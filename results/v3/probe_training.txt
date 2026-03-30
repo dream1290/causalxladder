@@ -1,0 +1,35 @@
+════════════════════════════════════════════════════════════
+NON-LINEAR PROBE — Does z_w encode C?
+════════════════════════════════════════════════════════════
+Loaded frozen model: causal_belief_v3_final.pt
+
+Collecting z_w samples (2000 episodes)...
+  Collected 100,000 samples from 500 episodes
+  Collected 200,000 samples from 1000 episodes
+  Collected 300,000 samples from 1500 episodes
+  Collected 400,000 samples from 2000 episodes
+Total samples: 400,000
+Label balance: 36.3% majority=1
+
+Training non-linear probe (128 → 32 → 1)...
+  Epoch  20 | loss 0.5941 | train_acc 69.7% | test_acc 69.4%
+  Epoch  40 | loss 0.5878 | train_acc 69.9% | test_acc 69.4%
+  Epoch  60 | loss 0.5847 | train_acc 70.7% | test_acc 70.2%
+  Epoch  80 | loss 0.5828 | train_acc 70.8% | test_acc 70.3%
+  Epoch 100 | loss 0.5813 | train_acc 70.8% | test_acc 70.3%
+
+════════════════════════════════════════════════════════════
+RESULTS
+════════════════════════════════════════════════════════════
+  Linear probe (logistic regression): 67.1%
+  Non-linear probe (MLP):             70.3%
+  PCA correlation (from training):     12.8%
+  Chance baseline:                     50.0%
+
+~ z_w partially encodes C (MLP acc = 70.3%)
+  → Some hidden state information present but not fully decodable
+
+  Non-linear ≈ Linear (diff = 3.3%)
+  → Encoding is approximately linear (PCA should have found it)
+
+Saved → v3_probe.pt
