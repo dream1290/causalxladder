@@ -4,8 +4,8 @@
 
 This repository contains the benchmark, evolutionary experiments, and neural model from our investigation of causal capacity as an adaptive trait. The core claim: when environmental volatility is high enough and the metabolic cost of tracking hidden variables is low enough, populations evolve causal reasoning as a stable equilibrium — not as an all-or-nothing switch, but as a continuous parameter that settles proportional to selection pressure.
 
-Research paper : https://zenodo.org/records/19118615?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6Ijc4MzEwMjYwLWE4MDMtNDRmYS1hNjUyLTUyMWU4YmQwZTI3MyIsImRhdGEiOnt9LCJyYW5kb20iOiJlZjE5MDNiZjQxNTk4YjcwMGI5NjFjZmNjYzYwZWU1YiJ9.L58LTdhRj1tqy0dORFaSMaDMW3XXVVSRmAmOxjk8syOAHJOToiItb0oFkpQ2Yx8YwqP5qo3X5gN1X-p3S4u8yQ
-
+Research paper 1 (environment) : https://zenodo.org/records/19118615?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6Ijc4MzEwMjYwLWE4MDMtNDRmYS1hNjUyLTUyMWU4YmQwZTI3MyIsImRhdGEiOnt9LCJyYW5kb20iOiJlZjE5MDNiZjQxNTk4YjcwMGI5NjFjZmNjYzYwZWU1YiJ9.L58LTdhRj1tqy0dORFaSMaDMW3XXVVSRmAmOxjk8syOAHJOToiItb0oFkpQ2Yx8YwqP5qo3X5gN1X-p3S4u8yQ
+Research paper 2 (architecture) : https://zenodo.org/records/19342006?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjhkOWY3Y2UzLTRhMDItNGVkZi04M2FkLTNhODY2NTRkOGI0OCIsImRhdGEiOnt9LCJyYW5kb20iOiJlNmY2ZTE3OGYzNjExOTY2MDU3NDczNDBmMWNkNzEwYiJ9.9nyOMC0GOaxapQTzFFUziHEZJY1OEwBCtNEIfF_ucvu9XUREdcQfuYjbgyz8Bz_0liI8eaItYvnb0G-YTj68Jw
 ## What's Here
 
 ### [`benchmark/`](benchmark/) — Causal Learning Benchmark (CLW)
